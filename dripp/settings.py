@@ -10,6 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+# this code is for storing images on our cloud file storage system with cloudinary.
+# You will need to create an account with cloudinary.com
+# you will need to create a file called '.keys.py' in this directory level
+# in that file you will need to create 3 variables, API, API_secrets, and cloud_name
+# set each of those variables to equal what they are in your new cloudinary account.
+# then you should be able to use this feature.
+
+# IMPORTANT  be sure to put .keys file in your gitignore file!!!!!!!!!!!
 import os
 import cloudinary
 import cloudinary.uploader
