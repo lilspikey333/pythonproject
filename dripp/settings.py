@@ -11,6 +11,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from .keys import API, API_secret, cloud_name
+
+cloudinary.config( 
+  cloud_name = cloud_name, 
+  api_key = API,
+  api_secret = API_secret, 
+)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'coreapp',
     'accounts',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
