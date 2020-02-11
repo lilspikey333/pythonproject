@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# current choices for the category of the items that the user is selling (both men and womens)
 CATEGORY_CHOICES = (
     ("Footwear", "Footwear"),
     ("Tops", "Tops"),
@@ -8,6 +9,7 @@ CATEGORY_CHOICES = (
     ("Accessories", "Accessories")
 )
 
+# choices for the condition of the items (both men and womens)
 CONDITION_CHOICES = (
     ("Mint", "Mint"),
     ("Good", "Good"),
@@ -15,6 +17,7 @@ CONDITION_CHOICES = (
     ("Character Flawed", "Character Flawed")
 )
 
+# size choices for the sizes of tops (both men and womens)
 TOP_CHOICES = (
     ("XS", "XS"),
     ("S", "S"),
@@ -25,6 +28,7 @@ TOP_CHOICES = (
     ("OTHER", "OTHER")
 )
 
+# size choices for the sizes of bottoms (both men and womens)
 BOTTOM_CHOICES = (
     ("XS", "XS"),
     ("S", "S"),
@@ -35,6 +39,7 @@ BOTTOM_CHOICES = (
     ("OTHER", "OTHER")
 )
 
+# size choices for the shoes (both men and womens)
 SHOE_CHOICES = (
 	('4','4'),
 	('5','5'),
@@ -52,6 +57,9 @@ SHOE_CHOICES = (
 )
 
 # Create your models here.
+
+# Item refers to the item that you are selling.  When you create an item, you will need to select a category, select the appropriate sizes and fill out the remainder of the form.
+
 class Item(models.Model):
     category = models.CharField (
         max_length = 100,
