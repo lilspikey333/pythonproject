@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from .forms import ItemForm
 from django.contrib.auth.decorators import login_required
 
+
 # API based views if you want that for whatever reason
 # class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = User.objects.all()
@@ -29,15 +30,16 @@ def item_detail(request, pk):
 @login_required
 def item_create(request):
     if request.method == 'POST':
-        form = ItemForm(request.POST)
+        form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
             item = form.save(commit=False)
-            form.user_id = request.user
-            item = form.save()
-            return redirect('item_detail', id = item.id)
+            print(request.user.id)
+            item.user_id = request.user.id
+            item.save()
+            return redirect('item_detail', pk = item.id)
     else:
         form = ItemForm()
-        return render(request, 'item_form.html', {'form': form})
+    return render(request, 'core/item_form.html', {'form': form})
 
 @login_required
 def item_edit(request, pk):

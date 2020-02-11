@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
  {% block content %}
 <h2>Items</h2>
+<a href="{% url 'item_create' %}">add item</a>
 <ul>
   {% for item in items %}
   <li>
