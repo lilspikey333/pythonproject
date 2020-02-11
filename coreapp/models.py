@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+import cloudinary
 
 # current choices for the category of the items that the user is selling (both men and womens)
 CATEGORY_CHOICES = (
@@ -61,13 +63,15 @@ SHOE_CHOICES = (
 # Item refers to the item that you are selling.  When you create an item, you will need to select a category, select the appropriate sizes and fill out the remainder of the form.
 
 class Item(models.Model):
+
+
     category = models.CharField (
         max_length = 100,
         choices = CATEGORY_CHOICES,
         default = "Footwear"
     )
     title = models.CharField(max_length = 200)
-    image = models.FileField(upload_to='images/', null=True)
+    image = CloudinaryField('image', null = True, blank = True)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     condition = models.CharField (
@@ -90,7 +94,7 @@ class Item(models.Model):
         choices = SHOE_CHOICES,
         default = "10"
     )
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
 
     def __str__(self):
         return self.title
