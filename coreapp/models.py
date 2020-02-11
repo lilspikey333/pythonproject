@@ -90,7 +90,7 @@ class Item(models.Model):
         choices = SHOE_CHOICES,
         default = "10"
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
 
     def __str__(self):
         return self.title

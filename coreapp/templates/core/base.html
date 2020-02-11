@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tunr</title>
+    <link rel="stylesheet" href="{% static '' %}"
+  </head>
+  <body>
+    <h1>Dripp</h1>
+    <nav>
+      <a href="{% url 'item_list' %}">Items</a>
+      <div class="user-info">
+        {% if user.is_authenticated %} Welcome, {{ user.username }}
+        <a href="{% url 'logout' %}">Log out</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Signup</a>
+        {% endif %}
+      </div>
+    </nav>
+    {%block content%}{%endblock%} 
+  </body>
+</html>
