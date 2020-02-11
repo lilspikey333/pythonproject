@@ -24,7 +24,7 @@ def item_list(request):
     return render(request, 'core/item_list.html', {'items': items})
 
 def item_detail(request, pk):
-    item = Item.objects.get(id=pk)
+    item = Item.objects.get(pk=pk)
     return render(request, 'core/item_detail.html', {'item': item})
 
 @login_required
