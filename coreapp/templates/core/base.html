@@ -1,5 +1,4 @@
-<!-- {% load static %} -->
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dripp</title>
     <!-- the below link is commented out in order render the item_detail.html page -->
-    <!-- <link rel="stylesheet" href="{% static '' %}"/> -->
+    <link rel="stylesheet" href="{% static 'css/dripp.css' %}"/>
   </head>
   <body>
     <h1>Dripp</h1>
@@ -22,6 +21,7 @@
         {% endif %}
       </div>
     </nav>
-    {%block content%}{%endblock%} 
+    {%block content%}
+    {%endblock%} 
   </body>
 </html>
