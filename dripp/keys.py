@@ -1,3 +1,3 @@
-cloud_name = 'dwg9lhez6'
-API = '593141948412369'
-API_secret = 'MISWoOFhpCu64xD6e2DIG5GIVac'
+cloud_name = 'imagemine'
+API = '721691353595894'
+API_secret = 'k4tna1Vu9bNNfrT6LfE9L1TcmsE'
