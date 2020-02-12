@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load cloudinary %}
 {% block content %}
-<!-- We are having trouble with the item_edit file for some reason.  We weren't able to debug this problem due to time -->
+<!-- fixed the bug here last second -->
 <h2>{{ item.title }} <a href="{% url 'item_edit' pk=item.id %}">(edit)</a></h2>
 <h3>Poster: {{ item.user.username }}</h3>
 <h4>Description: {{item.description}}</h4>
