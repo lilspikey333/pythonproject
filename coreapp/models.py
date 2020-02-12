@@ -63,8 +63,6 @@ SHOE_CHOICES = (
 # Item refers to the item that you are selling.  When you create an item, you will need to select a category, select the appropriate sizes and fill out the remainder of the form.
 
 class Item(models.Model):
-
-
     category = models.CharField (
         max_length = 100,
         choices = CATEGORY_CHOICES,
@@ -94,7 +92,7 @@ class Item(models.Model):
         choices = SHOE_CHOICES,
         default = "10"
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
 
     def __str__(self):
         return self.title

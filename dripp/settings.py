@@ -24,10 +24,10 @@ import cloudinary.uploader
 import cloudinary.api
 from .keys import API, API_secret, cloud_name
 
-cloudinary.config( 
-  cloud_name = cloud_name, 
+cloudinary.config(
+  cloud_name = cloud_name,
   api_key = API,
-  api_secret = API_secret, 
+  api_secret = API_secret,
 )
 
 
@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'coreapp',
     'accounts',
-    'cloudinary'
+    'cloudinary',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
