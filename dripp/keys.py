@@ -1,3 +1,3 @@
-cloud_name = 'dwg9lhez6'
-API = '593141948412369'
-API_secret = 'MISWoOFhpCu64xD6e2DIG5GIVac'
+cloud_name = 'ddxlt1pzx'
+API = '129246366613154'
+API_secret = 'vcVIXR8SmLrn2IVGLOfqguFS0GY'
