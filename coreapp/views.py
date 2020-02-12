@@ -20,10 +20,10 @@ class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
-    def destroy(self, request, *args, **kwargs):
-        response = super(ItemDetail, self).destroy(request, *args, **kwargs)
-        # return HttpResponseRedirect(url)
-        return redirect(reverse('item_list'))
+    # def destroy(self, request, *args, **kwargs):
+    #     response = super(ItemDetail, self).destroy(request, *args, **kwargs)
+    #     # return HttpResponseRedirect(url)
+    #     return redirect(reverse('item_list'))
 
 
 
